@@ -3,5 +3,7 @@ bin
 .classpath
 .gradle
 .project
+<<<<<<< HEAD
 tmp/
 log/
+.scala_dependencies
