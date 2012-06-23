@@ -15,7 +15,12 @@ class HomeController < ApplicationController
   def votar
     @aval = Avaliacao.new(:fator => params[:fator], :vereador => params[:id])
     @aval.save!
-    render :ranking
+    redirect_to :ranking
 
   end
+  def ranking
+    @vereadores = Avaliacao.all.inject({}) { |r, a| r[a.vereador] = r[a.vereador] ?
+        r[a.vereador] + a.fator.to_i : a.fator.to_i ; r}.sort { |i1, i2| i2.last <=> i1.last }
+  end
+
 end

@@ -1,1 +1,13 @@
-<h1>feito</h1>
+<article id="main_visu">
+    <section class="limit">
+        <div id="visua">
+            <img src="/assets/ico_comparar.png" alt="proposta_icone" width="40" height="40">
+            <h2>Ranking de vereadores</h2>
+            <ul>
+                <% @vereadores.each do | vereador, total | %>
+                <li><%= vereador %> - <%= total%></li>
+                <% end %>
+            </ul>
+        </div>
+    </section>
+</article>
