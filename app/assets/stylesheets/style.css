@@ -335,7 +335,7 @@ footer p{
 }
 
 #visua{
-	width:1000px;
+	width:950px;
 	height:500px;
 	background-color: white;
 	padding-top:20px;
@@ -365,7 +365,7 @@ footer p{
 }
 
 #visua2{
-	width:1000px;
+	width:950px;
 	height:500px;
 	background-color: white;
 }
@@ -380,7 +380,7 @@ footer p{
 }
 
 #visua3{
-	width:1000px;
+	width:950px;
 	height:500px;
 	background-color: white;
 }
@@ -392,7 +392,7 @@ footer p{
 }
 
 #visua4{
-	width:1000px;
+	width:950px;
 	height:500px;
 	background-color: white;
 }
@@ -404,7 +404,7 @@ footer p{
 }
 
 #pergunta{
-	width:1000px;
+	width:950px;
 	height:300px;
 	background-color: white;
 }
@@ -428,4 +428,13 @@ footer p{
 	float:left;
 	margin-top: 20px;
 	margin-left:20px;
+}
+
+
+#star img{
+	width:16px;
+	padding-top:20px;
+	padding-left:150px;
+	float:left;
+
 }

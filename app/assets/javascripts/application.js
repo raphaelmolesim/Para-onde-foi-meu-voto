@@ -19,4 +19,9 @@ $('#select-input').change(function(){
     $(location).attr('href',base + this.value)
 
 })
+$('#star').raty({
+  		readOnly : true,
+  		score    : 1
+	});
+
 })
