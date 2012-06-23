@@ -1,11 +1,16 @@
+<header id="hdr_in">
+	<section class="limit">
+		<h1><a href="index.html">Para onde foi meu voto?</a></h1>
+	</section>
+</header>
 <article id="topo">
 	<section class="limit">
 		<div id="user">
-			<img src="img/avat.png" alt="avatar" width="50px" height="50px">
-			<h2>Seu Nome Aqui!</h2>
+			<img src="/assets/avat.png" alt="avatar" width="50px" height="50px">
+			<h2>Voc&ecirc;!</h2>
 		</div>
 		<div id="politico">
-			<img src="img/ver_ico.png" alt="avatar" width="50px" height="50px">
+			<img src="/assets/ver_ico.png" alt="avatar" width="50px" height="50px">
 			<h2>Pol&iacute;tico honesto!</h2>
 		</div>
 	</section>
@@ -14,7 +19,9 @@
 <article id="main_visu">
 	<section class="limit">
 		<div id="visua">
-			<p>aqui visualizacao</p>
+
+			<h2>Projetos que o vereador prop&ocirc;s:</h2>
+			<%= render :partial => "map_tree", :locals => { :projetos => @projetos }  %>
 		</div>
 	</section>
 </article>
