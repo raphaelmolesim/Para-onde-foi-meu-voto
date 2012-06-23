@@ -14,7 +14,7 @@ end
 classes = eval "{ #{File.read("classes.txt")} }"
 file = File.read "projects_database.txt"
 file = file.force_encoding("ISO8859-1")
-lines = file.split("\r\n").select { |l| ['PL', 'PLO', 'PDL', 'PR'].include? l.split('#').first }.
+lines = file.split("\r\n").select { |l| ['PL', 'PLO', 'PLD'].include? l.split('#').first }.
   select{ |l| l.split('#')[2][6,10].to_i > 2008 }
 
 begin
