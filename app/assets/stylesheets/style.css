@@ -188,8 +188,8 @@ label{
 	width:200px;
 	margin-top:160px;
 	margin-left:-236px;
-	opacity:0.6;
-	filter:alpha(opacity=60); /* For IE8 and earlier */
+	opacity:0.9;
+	filter:alpha(opacity=90); /* For IE8 and earlier */
 }
 
 #nlembro a{
@@ -205,15 +205,15 @@ label{
 	width:200px;
 	margin-top:160px;
 	margin-left: -70px;
-	opacity:0.6;
-	filter:alpha(opacity=60); /* For IE8 and earlier */
+	opacity:0.9;
+	filter:alpha(opacity=90); /* For IE8 and earlier */
 }
 
 
 
 footer {
 	width:100%;
-	height:auto;
+	height:100px;
 	display: block;
 	margin-top:100px;
 	float: left;
@@ -274,21 +274,23 @@ footer p{
 
 #topo{
 	width:100%;
-	height:100px;
+	height:80px;
 	float:left;
-	margin-top:-10px;
+	margin-top:16px;
+	margin-bottom:30px;
 	background:url('/assets/back_resea.jpg');
-	padding-top:25px;
+	padding-top:10px;
 }
 
 #user{
 	width:400px;
-	height:70px;
+	height:80px;
 	float:left;
 }
 
 #user h2{
 	padding-top: 30px;
+	padding-bottom:0px;
 }
 
 #user img, h2{
@@ -305,7 +307,7 @@ footer p{
 
 #politico{
 	width:500px;
-	height:70px;
+	height:80px;
 	float:left;
 }
 
@@ -334,17 +336,25 @@ footer p{
 }
 
 #visua{
-	width:950px;
+	width:1000px;
 	height:500px;
 	background-color: white;
 	padding-top:20px;
 }
 
-#visua h2{
+#visua h2, #visua2 h2, #visua3 h2, #visua4 h2{
 	font-size: 1.6em;
 	font-family: 'Cutive', serif;
+	float:left;
+	margin-left:15px;
 }
 
+#visua img, #visua2 img, #visua3 img, #visua4 img, #pergunta img{
+	margin-right:0px;
+	margin-left:40px;
+	float:left;
+
+}
 
 
 
@@ -356,9 +366,9 @@ footer p{
 }
 
 #visua2{
-	width:950px;
+	width:1000px;
 	height:500px;
-	background-color: green;
+	background-color: white;
 }
 
 
@@ -371,9 +381,9 @@ footer p{
 }
 
 #visua3{
-	width:950px;
+	width:1000px;
 	height:500px;
-	background-color: blue;
+	background-color: white;
 }
 
 #gasto{
@@ -383,9 +393,9 @@ footer p{
 }
 
 #visua4{
-	width:950px;
+	width:1000px;
 	height:500px;
-	background-color: purple;
+	background-color: white;
 }
 
 #gostou{
@@ -395,7 +405,28 @@ footer p{
 }
 
 #pergunta{
-	width:950px;
+	width:1000px;
 	height:300px;
-	background-color: #34ff12;
+	background-color: white;
+}
+
+#box_star{
+	width:400px;
+	height:250px;
+	margin-left:270px;
+	background-color: #d7d9d9;
+	border-radius: 10px;
+	-moz-border-radius: 10px; 
+	-webkit-border-radius: 10px;
+	-ms-border-radius: 10px; 
+	-o-border-radius: 10px;
+
+}
+
+#box_star h2{
+	font-size: 1.6em;
+	font-family: 'Cutive', serif;
+	float:left;
+	margin-top: 20px;
+	margin-left:20px;
 }

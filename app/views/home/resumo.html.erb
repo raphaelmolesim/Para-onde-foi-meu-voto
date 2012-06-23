@@ -19,7 +19,7 @@
 <article id="main_visu">
 	<section class="limit">
 		<div id="visua">
-
+			<img src="/assets/ico_comparar.png" alt="proposta_icone" width="40" height="40">
 			<h2>Projetos que o vereador prop&ocirc;s:</h2>
 			<%= render :partial => "map_tree", :locals => { :projetos => @projetos }  %>
 		</div>
@@ -30,7 +30,8 @@
 <article id="aprova">
 	<section class="limit">
 		<div id="visua2">
-			<p>aqui visualizacao</p>
+			<img src="/assets/ico_aprovado.png" alt="favor_icone" width="40" height="40">
+			<h2>Projetos que o vereador votou a favor:</h2>
 		</div>
 	</section>
 </article>
@@ -39,7 +40,8 @@
 <article id="reprova">
 	<section class="limit">
 		<div id="visua3">
-			<p>aqui visualizacao</p>
+			<img src="/assets/ico_reprovado.png" alt="contra_icone" width="40" height="40">
+			<h2>Projetos que o vereador votou contra:</h2>
 		</div>
 	</section>
 </article>
@@ -47,7 +49,8 @@
 <article id="gasto">
 	<section class="limit">
 		<div id="visua4">
-			<p>aqui visualizacao</p>
+			<img src="/assets/ico_gastos.png" alt="gasto_icone" width="40" height="40">
+			<h2>Quantos R$ o vereador custou aos cofres p&uacute;blicos:</h2>
 		</div>
 	</section>
 </article>
@@ -56,7 +59,9 @@
 <article id="gostou">
 	<section class="limit">
 		<div id="pergunta">
-			<p>Que nota o seu candidato merece?</p>
+			<div id="box_star">
+				<h2>Para voc&ecirc;, qual nota o seu candidato merece?</h2>
+			</div>
 		</div>
 	</section>
 </article>
