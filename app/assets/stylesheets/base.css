@@ -27,26 +27,18 @@ a {
     color:#23A4FF;
 }
 
-#container {
-    width: 1000px;
-    height: 600px;
-    margin:0 auto;
-    position:relative;
-}
 #center-container {
     height:300px;
     width:800px;
     background-color:#1a1a1a;
     color:#ccc;
-		margin: 20px auto;
+		margin: 60px auto;
 }
 
 #infovis {
-    position:relative;
     width:800px;
     height:300px;
     margin:auto;
-    overflow:hidden;
 }
 
 /*TOOLTIPS*/
