@@ -273,12 +273,11 @@ footer p{
 
 #topo{
 	width:100%;
-	height:80px;
+	height:100px;
 	float:left;
 	margin-top:16px;
 	margin-bottom:30px;
 	background:url('/assets/back_resea.jpg');
-	padding-top:10px;
 }
 
 #user{
@@ -288,7 +287,7 @@ footer p{
 }
 
 #user h2{
-	padding-top: 30px;
+	padding-top: 10px;
 	padding-bottom:0px;
 }
 
@@ -304,24 +303,35 @@ footer p{
 	font-family: 'Pontano Sans', sans-serif;
 }
 
-#politico{
-	width:500px;
-	height:80px;
-	float:left;
+#politico h3 {
+	font-size: 2em;
+	font-family: 'Pontano Sans', sans-serif;
+	float: right;
+	margin-right: 60px;
+	
 }
 
+#politico {
+	width:450px;
+	height:80px;
+	float:right;
+}
+
+#user h2.you {
+	font-size: 5em;
+	font-weight: bold;
+}
+
+#topo section { 
+	max-width: 105em !important;
+}
 
 #politico img{
-	margin-right:60px;
-	margin-top:10px;
 	float: right;
 }
 
 #politico h2{
-	height:50px;
 	margin-right:60px;
-	margin-top:10px;
-	padding-top:30px;
 	float: right;
 }
 
