@@ -226,6 +226,12 @@ footer p{
 }
 
 
+
+
+
+
+
+
 /*
 * @section Layout
 * =page1_main
@@ -243,8 +249,8 @@ footer p{
 	background: url('/assets/logo_in.png') top left no-repeat;
 	text-indent: -9999px;
 	cursor: pointer;
-	width: 200px;
-	height: 70px;
+	width: 270px;
+	height: 95px;
 	margin-top: 30px;
 	margin-left: 0px;
 	float: left;
@@ -259,8 +265,8 @@ footer p{
 	background: url('/assets/logo2_in.png') top left no-repeat;
 	text-indent: -9999px;
 	cursor: pointer;
-	width: 200px;
-	height: 70px;
+	width: 270px;
+	height: 95px;
 	margin-top: 30px;
 	margin-left: 0px;
 	float: left;
@@ -271,12 +277,13 @@ footer p{
 	height:100px;
 	float:left;
 	margin-top:-10px;
+	background:url('/assets/back_resea.jpg');
+	padding-top:25px;
 }
 
 #user{
 	width:400px;
-	height:100px;
-	background-color: #fff;
+	height:70px;
 	float:left;
 }
 
@@ -285,7 +292,7 @@ footer p{
 }
 
 #user img, h2{
-	margin-left:20px;
+	margin-left:60px;
 	margin-top:10px;
 	float: left;
 }
@@ -297,22 +304,21 @@ footer p{
 }
 
 #politico{
-	width:550px;
-	height:100px;
-	background-color: #fff;
+	width:500px;
+	height:70px;
 	float:left;
 }
 
 
 #politico img{
-	margin-right:20px;
+	margin-right:60px;
 	margin-top:10px;
 	float: right;
 }
 
 #politico h2{
 	height:50px;
-	margin-right:20px;
+	margin-right:60px;
 	margin-top:10px;
 	padding-top:30px;
 	float: right;
@@ -330,10 +336,14 @@ footer p{
 #visua{
 	width:950px;
 	height:500px;
-	background-color: red;
+	background-color: white;
+	padding-top:20px;
 }
 
-
+#visua h2{
+	font-size: 1.6em;
+	font-family: 'Cutive', serif;
+}
 
 
 
