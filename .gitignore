@@ -3,3 +3,4 @@ bin
 .classpath
 .gradle
 .project
+.scala_dependencies
