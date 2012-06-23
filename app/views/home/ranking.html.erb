@@ -1,11 +1,17 @@
+<header>
+	<section class="limit">
+		<h1><a href="/">Para onde foi meu voto?</a></h1>
+	</section>
+</header>
 <article id="main_visu">
     <section class="limit">
         <div id="visua">
             <img src="/assets/ico_comparar.png" alt="proposta_icone" width="40" height="40">
             <h2>Ranking de vereadores</h2>
-            <ul>
-                <% @vereadores.each do | vereador, total | %>
-                <li><%= vereador %> - <%= total%></li>
+            <ul id="ranking">
+                <% @vereadores.each_with_index do |array, index | %>
+									<% vereador, total = array %>
+                <li><%= index + 1 %>) <%= vereador.split("-").collect{ |i| i.capitalize }.join(" ") %></li>
                 <% end %>
             </ul>
         </div>
