@@ -399,15 +399,17 @@ footer p{
 
 
 #visua4 ul{
-	width: 620px;
+	margin-top:20px;
+	width: 475px;
 	height: auto;
-	
+	float: left;
 }
 
 #visua4 li{
 	font-size: 1.2em;
 	font-family: 'Pontano Sans', sans-serif;
 	text-transform:lowercase;
+	text-align:left;
 }
 
 #gostou{
