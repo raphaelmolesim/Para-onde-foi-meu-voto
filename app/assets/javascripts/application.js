@@ -39,10 +39,10 @@ $('#star').raty(
 }
 
     )})
-/*
+
  window.fbAsyncInit = function() {
     FB.init({
-      appId      : 'YOUR_APP_ID', // App ID
+      appId      : '398241096888777', // App ID
       channelUrl : '//para-onde-foi-meu-voto.herokuapp.com//channel.html', // Channel File
       status     : true, // check login status
       cookie     : true, // enable cookies to allow the server to access the session
@@ -60,4 +60,4 @@ $('#star').raty(
      js.src = "//connect.facebook.net/en_US/all.js";
      ref.parentNode.insertBefore(js, ref);
    }(document));  
-   */  
+ 

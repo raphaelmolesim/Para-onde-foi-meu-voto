@@ -7,3 +7,4 @@ tmp/
 log/
 .scala_dependencies
 .bundle
+*sqlite3
