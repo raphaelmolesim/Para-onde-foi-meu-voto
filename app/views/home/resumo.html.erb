@@ -19,7 +19,9 @@
 <article id="main_visu">
 	<section class="limit">
 		<div id="visua">
+
 			<h2>Projetos que o vereador prop&ocirc;s:</h2>
+			<%= render :partial => "map_tree", :locals => { :projetos => @projetos }  %>
 		</div>
 	</section>
 </article>

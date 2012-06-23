@@ -18,7 +18,7 @@
   		<label><img src="/assets/ico_bandeira.png" alt="partido_icone">Partido: 
   			<select id="select-input2" title="Escolha o seu vereador">
   				<% @partidos.each do |partido| %>
-  				<option value="#"><%= partido %></option>
+  				<option value="<%= partido.parameterize %>"><%= partido %></option>
 					<% end %>
   			</select>
   		</label>

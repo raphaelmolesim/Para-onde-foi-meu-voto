@@ -26,9 +26,9 @@ var Log = {
 };
 
 
-function init(){
+function init(json){
   //init data
-  var json = "{\"children\" : [{\"children\" : [],\"data\": {\"playcount\": 10,\"$area\": 10},\"id\": \"saude\",\"name\": \"Saude\"},{\"children\" : [],\"data\": {\"playcount\": 30,\"$area\": 30},\"id\": \"espaco_pub\",\"name\": \"Espaco Publico\"},{\"children\" : [],\"data\": {\"playcount\": 30,\"$area\": 30},\"id\": \"edu\",\"name\": \"Educacao\"},{\"children\" : [],\"data\": {\"playcount\": 30,\"$area\": 30},\"id\": \"muda_nome\",\"name\": \"Muda Nome\"}]}";
+  //var json = "{\"children\" : [{\"children\" : [],\"data\": {\"playcount\": 10,\"$area\": 10},\"id\": \"saude\",\"name\": \"Saude\"},{\"children\" : [],\"data\": {\"playcount\": 30,\"$area\": 30},\"id\": \"espaco_pub\",\"name\": \"Espaco Publico\"},{\"children\" : [],\"data\": {\"playcount\": 30,\"$area\": 30},\"id\": \"edu\",\"name\": \"Educacao\"},{\"children\" : [],\"data\": {\"playcount\": 30,\"$area\": 30},\"id\": \"muda_nome\",\"name\": \"Muda Nome\"}]}";
   //end
   //init TreeMap
   var tm = new $jit.TM.Squarified({
