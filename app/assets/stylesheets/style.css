@@ -399,8 +399,9 @@ footer p{
 
 
 #visua4 ul{
-	width: 720px;
-	height: 42px;
+	width: 620px;
+	height: auto;
+	
 }
 
 #visua4 li{
