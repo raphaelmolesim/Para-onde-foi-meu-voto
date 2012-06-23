@@ -21,6 +21,7 @@ $('#select-input').change(function(){
 })
 $('#star').raty(
 {
+    size: 40,
     starOff   : 'star-off-big.png',
     starOn    : 'star-on-big.png',
     click: function(score){

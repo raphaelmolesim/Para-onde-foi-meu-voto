@@ -446,27 +446,36 @@ article#gasto h3 {
 }
 
 #box_star{
-	width:400px;
-	height:250px;
-	margin-left:270px;
+	width:600px;
+	margin-left:50px;
 	background-color: #d7d9d9;
+	border: 2px solid gray;
 	border-radius: 10px;
 	-moz-border-radius: 10px; 
 	-webkit-border-radius: 10px;
 	-ms-border-radius: 10px; 
 	-o-border-radius: 10px;
+	text-align: center;
+
 
 }
 
 #box_star h2{
-	font-size: 1.6em;
-	font-family: 'Cutive', serif;
+	font-size: 2.6em;
 	float:left;
 	margin-top: 20px;
 	margin-left:20px;
+	font-family: 'Cutive', serif;
 }
 
+#box_star img{
+	padding: 5px;
 
+}
+#star{
+	margin-left: 180px;
+	with:500px;	
+}
 
 .hidden {
 	display: none;
