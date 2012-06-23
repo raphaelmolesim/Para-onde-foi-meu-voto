@@ -136,7 +136,7 @@ header h1 a:hover{
 }
 	
 #box1 h1{
-	margin-left:160px;
+	margin-left:0px;
 	margin-top:20px;
 	font-size: 3em;
 	font-family: 'Cutive', serif;
@@ -144,7 +144,7 @@ header h1 a:hover{
 
 #select_form{
 	margin-top:40px;
-	margin-left:350px;
+	margin-left:250px;
 	float:left;
 	width:250px;
 }
@@ -158,10 +158,12 @@ fieldset img{
 
 #select-input{
 	margin-left:20px;
+	background-color: #e2e2e2;
 }
 
 #select-input2{
 	margin-left:37px;	
+	background-color: #e2e2e2;
 }
 
 label{
@@ -177,7 +179,7 @@ label{
 	float:left;
 	width:200px;
 	margin-top:160px;
-	margin-left:-76px;
+	margin-left:-236px;
 }
 
 
@@ -185,19 +187,35 @@ label{
 	float:left;
 	width:200px;
 	margin-top:160px;
-	margin-left:-76px;
+	margin-left:-236px;
+	opacity:0.6;
+	filter:alpha(opacity=60); /* For IE8 and earlier */
+}
+
+#nlembro a{
+	float:left;
+	width:200px;
+	margin-top:160px;
+	margin-left: -70px;
+}
+
+
+#nlembro a:hover{
+	float:left;
+	width:200px;
+	margin-top:160px;
+	margin-left: -70px;
+	opacity:0.6;
+	filter:alpha(opacity=60); /* For IE8 and earlier */
 }
 
 
 
 footer {
-	background-color: black;
 	width:100%;
 	height:auto;
 	display: block;
-	overflow: hidden;
 	margin-top:100px;
-	margin-left:400px;
 	float: left;
 }
 
