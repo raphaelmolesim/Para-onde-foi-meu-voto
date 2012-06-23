@@ -76,7 +76,6 @@ body{
 .limit{
 	margin: 0 auto;
 	max-width: 100em;
-	overflow: hidden;
 	position: relative;
 }
 
