@@ -60,7 +60,11 @@ function init(json){
     Events: {
       enable: true,
       onClick: function(node) {
-        if(node) tm.enter(node);
+        if(node) {
+			$('#lightbox-propostas li a').addClass('hidden');
+			$('#lightbox-propostas li a[data-category=' + node.id + ']').removeClass('hidden');
+			$('#lightbox-propostas').dialog({modal:true});
+		}
       },
       onRightClick: function() {
         tm.out();

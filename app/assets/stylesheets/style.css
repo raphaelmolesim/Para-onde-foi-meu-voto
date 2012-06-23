@@ -460,11 +460,13 @@ article#gasto h3 {
 	margin-left:20px;
 }
 
-
 #star img{
 	width:16px;
 	padding-top:20px;
 	padding-left:150px;
 	float:left;
+}
 
+.hidden {
+	display: none;
 }
