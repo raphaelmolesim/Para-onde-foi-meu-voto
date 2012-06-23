@@ -1,0 +1,373 @@
+/*
+* CSS Reset
+* My default elements and attributes to reset
+* 
+* @section Layout
+* @subsection Reset
+*/
+:focus {
+	outline:0;
+}
+::selection {
+	background: white;
+}
+::-moz-selection {
+	background: white;
+}
+*{
+	background: transparent;
+	border: 0;
+	font-family: inherit;
+	font-size: inherit;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+body{
+	font-size: 62.5%;
+	line-height: normal;
+}
+article, aside, details, figcaption, figure, header, hgroup, menu, nav, section {
+	display: block;
+}
+h1, h2, h3, h4, h5, h6{
+	font-weight: normal;
+}
+ol, ul {
+	list-style:none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+th, td {
+	text-align: left;
+}
+label[for], input[type=submit], button {
+	cursor:pointer; 
+}
+textarea {
+	resize:none;
+}
+p {
+	line-height: 1.5em;
+	word-wrap:break-word;
+}
+hr {
+	display: none;
+}
+
+
+
+/*
+*
+* 
+* @section Main
+*
+*/
+
+body{
+	width: 100%;
+	font-family: sans-serif;
+	margin:0;
+	padding:0;
+}
+
+.limit{
+	margin: 0 auto;
+	max-width: 100em;
+	overflow: hidden;
+	position: relative;
+}
+
+#wrap{
+	width: 100%;
+	margin: 0 auto;
+}			
+
+
+/*
+* @section Layout
+* =header
+*/		
+
+header{
+	width: 100%;
+	height: 220px;
+	overflow: hidden;
+	float:left;
+}
+
+header h1 a{
+	background: url('/assets/logo.png') top left no-repeat;
+	text-indent: -9999px;
+	cursor: pointer;
+	width: 399px;
+	height: 140px;
+	margin-top: 40px;
+	margin-left: 0px;
+	float: left;
+	transition: all ease-out 600ms;
+	-webkit-transition: all ease-out 600ms;
+	-moz-transition: all ease-out 600ms;
+	-ms-transition: all ease-out 600ms;
+	-o-transition: all ease-out 600ms;
+}
+
+header h1 a:hover{
+	background: url('/assets/logo2.png') top left no-repeat;
+	text-indent: -9999px;
+	cursor: pointer;
+	width: 399px;
+	height: 140px;
+	margin-top: 40px;
+	margin-left: 0px;
+	float: left;
+}
+
+
+
+#box1{
+	width: 100%;
+	height: 300px;
+	background:url('/assets/back_resea.jpg');
+	margin-left:0px;
+	float:left;
+}
+	
+#box1 h1{
+	margin-left:160px;
+	margin-top:20px;
+	font-size: 3em;
+	font-family: 'Cutive', serif;
+}
+
+#select_form{
+	margin-top:40px;
+	margin-left:350px;
+	float:left;
+	width:250px;
+}
+
+fieldset img{
+	float:left;
+	height:40px;
+	width:40px;
+	margin-right:20px;
+}
+
+#select-input{
+	margin-left:20px;
+}
+
+#select-input2{
+	margin-left:37px;	
+}
+
+label{
+	width:310px;
+	float:left;
+	font-size: 2.3em;
+	font-family: 'Pontano Sans', sans-serif;
+	margin-bottom:20px;
+	text-align: left;
+}
+
+#nulo a{
+	float:left;
+	width:200px;
+	margin-top:160px;
+	margin-left:-76px;
+}
+
+
+#nulo a:hover{
+	float:left;
+	width:200px;
+	margin-top:160px;
+	margin-left:-76px;
+}
+
+
+
+footer {
+	background-color: black;
+	width:100%;
+	height:auto;
+	display: block;
+	overflow: hidden;
+	margin-top:100px;
+	margin-left:400px;
+	float: left;
+}
+
+footer p{
+	font-size: 1em;
+	font-family: 'Pontano Sans', sans-serif;
+	color: black;
+}
+
+
+/*
+* @section Layout
+* =page1_main
+*/
+
+
+#hdr_in{
+	width: 100%;
+	height: 130px;
+	overflow: hidden;
+	float:left;
+}
+
+#hdr_in h1 a{
+	background: url('/assets/logo_in.png') top left no-repeat;
+	text-indent: -9999px;
+	cursor: pointer;
+	width: 200px;
+	height: 70px;
+	margin-top: 30px;
+	margin-left: 0px;
+	float: left;
+	transition: all ease-out 600ms;
+	-webkit-transition: all ease-out 600ms;
+	-moz-transition: all ease-out 600ms;
+	-ms-transition: all ease-out 600ms;
+	-o-transition: all ease-out 600ms;
+}
+
+#hdr_in h1 a:hover{
+	background: url('/assets/logo2_in.png') top left no-repeat;
+	text-indent: -9999px;
+	cursor: pointer;
+	width: 200px;
+	height: 70px;
+	margin-top: 30px;
+	margin-left: 0px;
+	float: left;
+}
+
+#topo{
+	width:100%;
+	height:100px;
+	float:left;
+	margin-top:-10px;
+}
+
+#user{
+	width:400px;
+	height:100px;
+	background-color: #fff;
+	float:left;
+}
+
+#user h2{
+	padding-top: 30px;
+}
+
+#user img, h2{
+	margin-left:20px;
+	margin-top:10px;
+	float: left;
+}
+
+
+#user h2, #politico h2{
+	font-size: 2em;
+	font-family: 'Pontano Sans', sans-serif;
+}
+
+#politico{
+	width:550px;
+	height:100px;
+	background-color: #fff;
+	float:left;
+}
+
+
+#politico img{
+	margin-right:20px;
+	margin-top:10px;
+	float: right;
+}
+
+#politico h2{
+	height:50px;
+	margin-right:20px;
+	margin-top:10px;
+	padding-top:30px;
+	float: right;
+}
+
+
+
+
+#main_visu{
+	width: 100%;
+	height: 500px;
+	float:left;
+}
+
+#visua{
+	width:950px;
+	height:500px;
+	background-color: red;
+}
+
+
+
+
+
+
+
+#aprova{
+	width: 100%;
+	height: 500px;
+	float:left;
+}
+
+#visua2{
+	width:950px;
+	height:500px;
+	background-color: green;
+}
+
+
+
+
+#reprova{
+	width: 100%;
+	height: 500px;
+	float:left;
+}
+
+#visua3{
+	width:950px;
+	height:500px;
+	background-color: blue;
+}
+
+#gasto{
+	width: 100%;
+	height: 500px;
+	float:left;
+}
+
+#visua4{
+	width:950px;
+	height:500px;
+	background-color: purple;
+}
+
+#gostou{
+	width: 100%;
+	height: 500px;
+	float:left;
+}
+
+#pergunta{
+	width:950px;
+	height:300px;
+	background-color: #34ff12;
+}

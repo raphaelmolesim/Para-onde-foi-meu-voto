@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ParaOndeFoiMeuVoto</title>
+  <title>Para Onde Foi Meu Voto?</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+	<!-- Description and keywords -->
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	
+	<!-- Site Information -->
+	<meta http-equiv="X-UA-Compatible" content="IE=9, IE=8, chrome=1">
+	<link rel="canonical" href="">
+		
+	<!-- Viewport -->
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	
+	<!-- Author -->
+	<link rel="author" href="">
+	<meta name="google-site-verification" content="">
+	
+	<!-- Stylesheets & Webfonts -->
+	<link href='http://fonts.googleapis.com/css?family=Cutive' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css'>
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 </head>
 <body>
-
-<%= yield %>
-
+	<header>
+		<section class="limit">
+			<h1><a href="index.html">Para onde foi meu voto?</a></h1>
+		</section>
+	</header>
+	<%= yield %>
+	<footer>
+		<section class="limit">
+			<p>projeto desenvolvido durante do evento Hackat&atilde;o</p>
+		</section>
+	</footer>
 </body>
 </html>
