@@ -6,12 +6,17 @@
 <article id="topo">
 	<section class="limit">
 		<div id="user">
-			<img src="/assets/avat.png" alt="avatar" width="50px" height="50px">
-			<h2>Voc&ecirc;!</h2>
+			<img src="/assets/avat.png" alt="avatar" width="70px" height="70px">
+			<h2 class="you">Voc&ecirc;</h2>
 		</div>
 		<div id="politico">
-			<img src="/assets/ver_ico.png" alt="avatar" width="50px" height="50px">
-			<h2>Pol&iacute;tico honesto!</h2>
+			<img src="<%= @vereador['foto']%>" alt="avatar" width="100px" height="100px">
+			<h2>Seu Representante</h2>
+			<h3>
+				<a href="<%= @vereador['twitter'] %>">
+				<%= @vereador['nome'].split(' ').collect{ |i| i.capitalize }.join(" ") %>
+				</a>
+			</h3>
 		</div>
 	</section>
 </article>
@@ -27,7 +32,7 @@
 </article>
 
 
-<article id="aprova">
+<article id="aprova" style="display:none;">
 	<section class="limit">
 		<div id="visua2">
 			<img src="/assets/ico_aprovado.png" alt="favor_icone" width="40" height="40">
@@ -37,7 +42,7 @@
 </article>
 
 
-<article id="reprova">
+<article id="reprova"  style="display:none;">
 	<section class="limit">
 		<div id="visua3">
 			<img src="/assets/ico_reprovado.png" alt="contra_icone" width="40" height="40">
@@ -51,16 +56,21 @@
 		<div id="visua4">
 			<img src="/assets/ico_gastos.png" alt="gasto_icone" width="40" height="40">
 			<h2>Quantos R$ o vereador custou aos cofres p&uacute;blicos:</h2>
-			<ul>
-				<% @salarios.each do |salario| %>
-				<li><%= salario['cargo'] %> <%= salario['funcionario'] %> <%= salario['valorFormatado']%></li>
-				<% end %>
-			</ul>
-			<ul>
-				<% @gastos.each do |gasto| %>
-				<li><%= gasto['cargo'] %> <%= gasto['descricao'] %> <%= gasto['valorFormatado']%></li>
-				<% end %>
-			</ul>
+			<h3><%= number_to_currency( (@salarios + @gastos).
+				collect { |i| i['valor'].gsub(",", ".").gsub(".", "").to_i }.
+				inject(0) { |r,i| r + i }, :unit => "R$ ").gsub(",", ".").gsub(".00",",00	") %></h3>
+			<div id="custos">
+				<ul id="salarios">
+					<% @salarios.each do |salario| %>
+					<li><%= salario['cargo'] %> <%= salario['funcionario'] %> <%= salario['valorFormatado']%></li>
+					<% end %>
+				</ul>
+				<ul id="gastos">
+					<% @gastos.each do |gasto| %>
+					<li><%= gasto['cargo'] %> <%= gasto['descricao'] %> <%= gasto['valorFormatado']%></li>
+					<% end %>
+				</ul>
+			</div>
 		</div>
 	</section>
 </article>
@@ -80,3 +90,6 @@
 		</div>
 	</section>
 </article>
+
+<%= render :partial => 'lightbox', :locals => {:projects => @projetos} %>
+
