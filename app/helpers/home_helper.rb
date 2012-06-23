@@ -37,7 +37,7 @@ module HomeHelper
           :playcount => total,
           :"$area" => total
         },
-        :id => display_categoria(categoria, total, sum),
+        :id => categoria,
         :name => display_categoria(categoria, total, sum)
       }
     end }  
