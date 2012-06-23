@@ -16,7 +16,7 @@
 $().ready(function(){
 $('#select-input').change(function(){
     base = '/vereadores/'
-    $(location).attr('href',base + this.value)
+    $(location).attr('href',base + $(this).val())
 
 })
 })

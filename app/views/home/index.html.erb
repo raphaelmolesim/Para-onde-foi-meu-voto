@@ -11,7 +11,7 @@
   		<label><img src="/assets/ver_ico.png" alt="vereador_icone">Vereador: 
   			<select id="select-input" title="Escolha o seu vereador">
 					<% @nomes.each do |vereador| %>
-  				<option value="#"><%= vereador %></option>
+  				<option value="<%= vereador %>"><%= vereador %></option>
 					<% end %>
   			</select>
   		</label>
