@@ -358,7 +358,7 @@ footer p{
 	margin-left:15px;
 }
 
-#visua img, #visua2 img, #visua3 img, #visua4 img, #pergunta img{
+#visua img, #visua2 img, #visua3 img, #visua4 img{
 	margin-right:0px;
 	margin-left:40px;
 	float:left;
@@ -460,13 +460,9 @@ article#gasto h3 {
 	margin-left:20px;
 }
 
-#star img{
-	width:16px;
-	padding-top:20px;
-	padding-left:150px;
-	float:left;
-}
+
 
 .hidden {
 	display: none;
 }
+

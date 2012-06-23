@@ -19,13 +19,26 @@ $('#select-input').change(function(){
     $(location).attr('href',base + this.value)
 
 })
-$('#star').raty({
-  		readOnly : true,
-  		score    : 1
-	});
+$('#star').raty(
+{
+    starOff   : 'star-off-big.png',
+    starOn    : 'star-on-big.png',
+    click: function(score){
+        base = '/votar/'
+       // $(location).attr('href', base + score)
+        $('input[name=vereador]').val()
+        $('input[name=fator]').val(score)
 
-})
+        // alert($('input[name=vereador]').val())
 
+        $('#avaliacao').submit()
+        // $.post(base + score)
+    }
+
+}
+
+    )})
+/*
  window.fbAsyncInit = function() {
     FB.init({
       appId      : 'YOUR_APP_ID', // App ID
@@ -45,4 +58,5 @@ $('#star').raty({
      js = d.createElement('script'); js.id = id; js.async = true;
      js.src = "//connect.facebook.net/en_US/all.js";
      ref.parentNode.insertBefore(js, ref);
-   }(document));    
+   }(document));  
+   */  

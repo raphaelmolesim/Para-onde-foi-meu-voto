@@ -76,13 +76,17 @@
 	</section>
 </article>
 
-
 <article id="gostou">
 	<section class="limit">
 		<div id="pergunta">
 			<div id="box_star">
 				<h2>Para voc&ecirc;, qual nota o seu candidato merece?</h2>
+				<form id="avaliacao" action="/votar/<%= params[:id] %>" method="post">
+					<input type="hidden" name="vereador" value="" />
+					<input type="hidden" name="fator" value="" />
+				</form>
 				<div id="star"></div>
+
 			</div>
 		</div>
 	</section>
