@@ -397,6 +397,18 @@ footer p{
 	background-color: white;
 }
 
+
+#visua4 ul{
+	width: 720px;
+	height: 42px;
+}
+
+#visua4 li{
+	font-size: 1.2em;
+	font-family: 'Pontano Sans', sans-serif;
+	text-transform:lowercase;
+}
+
 #gostou{
 	width: 100%;
 	height: 500px;
