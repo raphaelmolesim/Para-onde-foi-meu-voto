@@ -10,7 +10,7 @@ import java.io.File
 import sjson.json.Serializer.{ SJSON => serializer }
 
 @BeanInfo
-case class Vereador(nome : String, partido : String, ramais : List[String], gabinete : String, sala : String, apelidos : List[String])
+case class Vereador(nome : String, partido : String, ramais : List[String], gabinete : String, sala : String, apelidos : List[String], foto : String, twitter : String)
 
 object Vereadores {
 
@@ -23,6 +23,16 @@ object Vereadores {
         (List(sLine(1)) ++ sLine(2).split("%") ++ sLine(3).split("%")).map(_.toLowerCase)
     })
 
+  val fotos : List[(String, String)] = Source.fromInputStream(this.getClass.getResourceAsStream("/vereadores_extra")).getLines.toList.map(line => {
+    val s = line.split("\\|")
+    (s(0).trim.toLowerCase, s(2).trim)
+  })
+
+  val twitter : List[(String, String)] = Source.fromInputStream(this.getClass.getResourceAsStream("/vereadores_extra")).getLines.toList.map(line => {
+    val s = line.split("\\|")
+    (s(0).trim.toLowerCase, s(1).trim)
+  })
+
   val vereadores : List[Vereador] = parse(XML.load(this.getClass.getResourceAsStream("/Lista_VEreadores.xml")) \\ "Row")
 
   def parse(nodes : NodeSeq) : List[Vereador] = {
@@ -34,9 +44,19 @@ object Vereadores {
       val gabinete = (vereador \ "GV").head.text
       val sala = (vereador \ "SALA").head.text
       val apelidos = v.filter(_.contains(nome)).headOption.getOrElse(List())
-      buffer += Vereador(nome, partido, ramais, gabinete, sala, apelidos)
+      val foto = fotoPara(nome)
+      val twitter = twitterPara(nome)
+      buffer += Vereador(nome, partido, ramais, gabinete, sala, apelidos, foto, twitter)
     })
     buffer.toList
+  }
+
+  def fotoPara(nome : String) : String = {
+    fotos.filter(_._1 == nome).headOption.getOrElse(("", ""))._2
+  }
+
+  def twitterPara(nome : String) : String = {
+    twitter.filter(_._1 == nome).headOption.getOrElse(("", ""))._2
   }
 
   def main(args : Array[String]) {
