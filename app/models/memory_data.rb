@@ -17,11 +17,15 @@ class MemoryData
   end
   
   def vereador_por_slug(slug)
-    @vereadores.collect { |v| v['nome'].parameterize }.select{ |v| v == slug }.first
+    @vereadores.select{ |v| v['nome'].parameterize == slug }.first
   end
   
-  def projetos_propostos_por(vereador)
-    @projetos.select { |p| p['autores'].collect{ |a| a.downcase }.include?(vereador) }
+  def projetos_propostos_por(apelidos_do_vereador)
+    @projetos.select do |p| 
+      autores = p['autores'].collect{ |a| a.downcase }
+      aux = (autores + apelidos_do_vereador)
+      aux.size != aux.uniq.size
+    end
   end
   
   def partidos

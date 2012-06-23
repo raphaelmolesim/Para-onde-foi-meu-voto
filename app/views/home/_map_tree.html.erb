@@ -6,3 +6,8 @@
 
 <script language="javascript" type="text/javascript" src="/assets/jit-yc.js"></script>
 <script type="text/javascript" src="/assets/tree-map.js"></script>
+
+<script type="text/javascript">
+	var json = "<%= format_data(projetos).to_json.gsub("\"", "\\\"").html_safe %>";
+	init(json);
+</script>
