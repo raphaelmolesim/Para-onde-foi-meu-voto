@@ -311,6 +311,12 @@ footer p{
 	
 }
 
+#politico h3	 {
+	width:200px;
+	display:block;
+	text-align: right;
+}
+
 #politico {
 	width:400px;
 	height:80px;
@@ -429,8 +435,8 @@ article#gasto h3 {
 }
 #gostou{
 	width: 100%;
-	height: 500px;
 	float:left;
+	height: 225px;
 }
 
 #pergunta{
