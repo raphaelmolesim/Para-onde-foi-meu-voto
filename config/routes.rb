@@ -1,5 +1,5 @@
 ParaOndeFoiMeuVoto::Application.routes.draw do
-  get "home/index"
+  match "/vereador/:id" => "home#vereador", :via => :get
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
