@@ -13,3 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+$().ready(function(){
+$('#select-input').change(function(){
+    base = '/vereadores/'
+    $(location).attr('href',base + this.value)
+
+})
+})
