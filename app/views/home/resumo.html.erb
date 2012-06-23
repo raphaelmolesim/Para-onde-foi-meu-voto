@@ -17,6 +17,7 @@
 				<%= @vereador['nome'].split(' ').collect{ |i| i.capitalize }.join(" ") %>
 				</a>
 			</h3>
+			<h3><%= @vereador['partido'] %></h3>
 		</div>
 	</section>
 </article>
@@ -25,7 +26,7 @@
 	<section class="limit">
 		<div id="visua">
 			<img src="/assets/ico_comparar.png" alt="proposta_icone" width="40" height="40">
-			<h2>Projetos que o vereador prop&ocirc;s:</h2>
+			<h2>Projetos que você prop&ocirc;s:</h2>
 			<%= render :partial => "map_tree", :locals => { :projetos => @projetos }  %>
 		</div>
 	</section>
@@ -62,7 +63,7 @@
 			<div id="custos">
 				<ul id="salarios">
 					<% @salarios.each do |salario| %>
-					<li><%= salario['cargo'] %> <%= salario['funcionario'] %> <%= salario['valorFormatado']%></li>
+					<li><%= salario['cargo'] %> <%= salario['funcionario'] %> <%= salario['valorFormatado'] %></li>
 					<% end %>
 				</ul>
 				<ul id="gastos">

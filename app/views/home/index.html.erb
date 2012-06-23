@@ -15,7 +15,7 @@
 					<% end %>
   			</select>
   		</label>
-  		<label><img src="/assets/ico_bandeira.png" alt="partido_icone">Partido: 
+  		<label style="display:none;"><img src="/assets/ico_bandeira.png" alt="partido_icone">Partido: 
   			<select id="select-input2" title="Escolha o seu vereador">
   				<% @partidos.each do |partido| %>
   				<option value="<%= partido.parameterize %>"><%= partido %></option>
@@ -24,10 +24,10 @@
   		</label>
   		</fieldset>
 	</form>
-	<div id="nulo">
+	<div style="display:none;" id="nulo">
 		<a href="#"><img src="/assets/bt_nulo.png" alt="Botao_nulo"></a>
 	</div>
-	<div id="nlembro">
+	<div style="display:none;" id="nlembro">
 		<a href="#"><img src="/assets/bt_nlembro.png" alt="Botao_nulo"></a>	
 	</div>
 	</section>
