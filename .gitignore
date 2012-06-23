@@ -3,3 +3,5 @@ bin
 .classpath
 .gradle
 .project
+tmp/
+log/
