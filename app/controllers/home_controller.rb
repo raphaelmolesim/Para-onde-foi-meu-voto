@@ -13,7 +13,7 @@ class HomeController < ApplicationController
   end
 
   def votar
-    @aval = Avaliacao.new(:fator => params[:fator], :vereador => params[:vereador])
+    @aval = Avaliacao.new(:fator => params[:fator], :vereador => params[:id])
     @aval.save!
     render :ranking
 
