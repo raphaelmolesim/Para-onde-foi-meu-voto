@@ -10,6 +10,7 @@
 		<fieldset>
   		<label><img src="/assets/ver_ico.png" alt="vereador_icone">Vereador: 
   			<select id="select-input" title="Escolha o seu vereador">
+					<option value="--">Selecione o seu Vereador</option>
 					<% @nomes.each do |vereador| %>
   				<option value="<%= vereador.parameterize %>"><%= vereador %></option>
 					<% end %>
