@@ -7,6 +7,7 @@ class MemoryData
     @vereadores = JSON File.read("#{Rails.root}/db/vereadores.json")
     @projetos = JSON File.read("#{Rails.root}/db/projetos.json")
     @salarios = JSON File.read("#{Rails.root}/db/salarios.json")
+    @gastos = JSON File.read("#{Rails.root}/db/gastos.json")
   end
   
   def vereadores
@@ -32,6 +33,13 @@ class MemoryData
   def salarios_por(apelidos_do_vereador)
     @salarios.select do |salario| 
       vereador = salario['vereador'].downcase
+      apelidos_do_vereador.include?(vereador)
+    end
+  end
+
+  def gastos_por(apelidos_do_vereador)
+    @gastos.select do |gastos| 
+      vereador = gastos['vereador'].downcase
       apelidos_do_vereador.include?(vereador)
     end
   end

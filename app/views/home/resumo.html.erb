@@ -56,6 +56,11 @@
 				<li><%= salario['cargo'] %> <%= salario['funcionario'] %> <%= salario['valorFormatado']%></li>
 				<% end %>
 			</ul>
+			<ul>
+				<% @gastos.each do |gasto| %>
+				<li><%= gasto['cargo'] %> <%= gasto['descricao'] %> <%= gasto['valorFormatado']%></li>
+				<% end %>
+			</ul>
 		</div>
 	</section>
 </article>
