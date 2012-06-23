@@ -51,6 +51,11 @@
 		<div id="visua4">
 			<img src="/assets/ico_gastos.png" alt="gasto_icone" width="40" height="40">
 			<h2>Quantos R$ o vereador custou aos cofres p&uacute;blicos:</h2>
+			<ul>
+				<% @salarios.each do |salario| %>
+				<li><%= salario['cargo'] %> <%= salario['funcionario'] %> <%= salario['valorFormatado']%></li>
+				<% end %>
+			</ul>
 		</div>
 	</section>
 </article>

@@ -2,20 +2,20 @@
 module HomeHelper
   
   def display_categoria categoria, total, sum
+    puts categoria
     map = { 
-    "fiscalização" => "Fiscalização",
+    "fiscalizacao" => "Fiscalização",
     "dev" => "Desenvolvimento", 
     "transito" => "Trânsito",
-    "segurança" => "Segurança",
+    "seguranca" => "Segurança",
     "data" => "Datas Comemorativas",
     "aumento" => "Aumentos de Salarial",
     "ambiente" => "Meio Ambiente",
-    "seguranca" => "Segurança",
     "saude" => "Saúde",
     "direito" => "Garantia de Direitos",
     "outros" => "Outros",
     "muda_nome" => "Denomina Espaços Públicos",
-    "regulamentação" => "Regulamentação",
+    "regulamentacao" => "Regulamentação",
     "lixo" => "Reciclagem",
     "cultura" => "Cultura",
     "seguraca" => "Segurança",

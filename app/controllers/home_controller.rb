@@ -7,6 +7,7 @@ class HomeController < ApplicationController
   def vereador
     @vereador = MemoryData.instance.vereador_por_slug(params[:id])
     @projetos = MemoryData.instance.projetos_propostos_por(@vereador['apelidos'])
+    @salarios = MemoryData.instance.salarios_por(@vereador['apelidos'])
     render :resumo
   end
 end
