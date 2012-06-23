@@ -96,7 +96,7 @@ object Gastos {
     val value = a.get match {
       case m : Map[String, List[Map[String, String]]] => m("despesas").map(map => Gasto(nome, map("descricao"), map("total")))
     }
-    value
+    value.filterNot(_.descricao == "Total")
   }
 
 }
