@@ -9,4 +9,11 @@ class HomeController < ApplicationController
     @projetos = MemoryData.instance.projetos_propostos_por(@vereador['apelidos'])
     render :resumo
   end
+
+  def votar
+    @aval = Avaliacao.new(:fator => params[:fator], :vereador => params[:vereador])
+    @aval.save!
+    render :ranking
+
+  end
 end
