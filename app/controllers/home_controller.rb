@@ -11,4 +11,11 @@ class HomeController < ApplicationController
     @gastos = MemoryData.instance.gastos_por(@vereador['apelidos'])
     render :resumo
   end
+
+  def votar
+    @aval = Avaliacao.new(:fator => params[:fator], :vereador => params[:vereador])
+    @aval.save!
+    render :ranking
+
+  end
 end
