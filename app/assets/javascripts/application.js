@@ -15,8 +15,8 @@
 //= require_tree .
 $().ready(function(){
 $('#select-input').change(function(){
-    base = '/vereadores/'
-    $(location).attr('href',base + $(this).val())
+    base = '/vereador/'
+    $(location).attr('href',base + this.value)
 
 })
 })
