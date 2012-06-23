@@ -6,6 +6,6 @@ class HomeController < ApplicationController
   
   def vereador
     params[:id]
-    
+    render :resumo
   end
 end
