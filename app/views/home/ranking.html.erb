@@ -12,6 +12,7 @@
                 <% @vereadores.each_with_index do |array, index | %>
 									<% vereador, total = array %>
                 <li><%= index + 1 %>) <%= vereador.split("-").collect{ |i| i.capitalize }.join(" ") %></li>
+								<% end %>
             </ul>
         </div>
     </section>
