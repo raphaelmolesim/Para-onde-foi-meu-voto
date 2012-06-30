@@ -3,11 +3,36 @@ package voto
 import org.junit.Test
 import org.junit.Assert
 
-class VereadorIdTest {
+class MapaDeVereadoresTest {
 
   @Test
   def encontraUmVereador() {
     Assert.assertEquals(0, MapaDeVereadores("1#Nome").resolve("Nome"))
+  }
+
+  @Test
+  def naoDeveExplodirSeNomeEApelidosForemIguais() {
+    Assert.assertEquals(0, MapaDeVereadores("1#Nome#Nome").resolve("Nome"))
+  }
+
+  @Test
+  def naoDeveExplodirSeNomeEApelidosForemIguaisApesarDosAcentos() {
+    Assert.assertEquals(0, MapaDeVereadores("1#Nóme#Nome").resolve("Nome"))
+  }
+
+  @Test(expected = classOf[Exception])
+  def naoDeveEncontrarVereadorBlank() {
+    MapaDeVereadores("1#Nome# #").resolve(" ")
+  }
+
+  @Test(expected = classOf[Exception])
+  def naoDeveEncontrarVereadorVazio() {
+    MapaDeVereadores("1#Nome##\n2#Nome2##").resolve("")
+  }
+
+  @Test(expected = classOf[RuntimeException])
+  def naoDeveSobrescreverONomeDoVereador() {
+    Assert.assertEquals(0, MapaDeVereadores("1#Nome\n2#Nome").resolve("Nome"))
   }
 
   @Test
