@@ -1,6 +1,6 @@
 require 'singleton'
 
-class MemoryData
+class Repository
   include Singleton
   
   def initialize
