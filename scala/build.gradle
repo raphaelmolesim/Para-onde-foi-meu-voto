@@ -16,6 +16,8 @@ repositories {
 dependencies {
 	compile 'net.debasishg:sjson_2.9.1:0.17'
 	
+	testRuntime 'junit:junit:4.10'
+	
 	scalaTools 'org.scala-lang:scala-compiler:' + scalaVersion
 	scalaTools 'org.scala-lang:scala-library:' + scalaVersion
 }

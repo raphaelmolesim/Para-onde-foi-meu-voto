@@ -8,3 +8,4 @@ log/
 .scala_dependencies
 .bundle
 *sqlite3
+build
