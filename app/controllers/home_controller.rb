@@ -6,9 +6,9 @@ class HomeController < ApplicationController
   
   def vereador
     @vereador = Repository.instance.vereador_por_slug(params[:id])
-    @projetos = Repository.instance.projetos_propostos_por(@vereador['apelidos'])
-    @salarios = Repository.instance.salarios_por(@vereador['apelidos'])
-    @gastos = Repository.instance.gastos_por(@vereador['apelidos'])
+    @projetos = Repository.instance.projetos_por_vereador(@vereador['apelidos'])
+    @salarios = Repository.instance.salarios_por_vereador(@vereador['apelidos'])
+    @gastos = Repository.instance.gastos_por_vereador(@vereador['apelidos'])
     render :resumo
   end
 
