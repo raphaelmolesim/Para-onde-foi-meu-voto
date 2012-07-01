@@ -22,6 +22,7 @@ object Projetos {
 
   def main(args : Array[String]) {
 
+    val w = new PrintWriter(new File("projetos_nao_categorizados.tsv"))
     val projetos : List[Projeto] = Source.fromInputStream(this.getClass.getResourceAsStream("/projects_database.txt")).getLines.
       toList.tail.filter(line => line.startsWith("PL") || line.startsWith("PDL") || line.startsWith("PLO")).filter(line => {
         line.split("#")(2).split("/")(2) > "2008"
@@ -37,11 +38,13 @@ object Projetos {
         val autores : List[Int] = sLine(3).split("%").toList.filter(nome => {
           !List("ADMINISTRACAO", "SAUDE", "CONSTITUICAO", "MESA", "EDUCACAO", "DEMOCRATAS", "Executivo", "PART.", "PARTIDO", "TRIBUNAL DE CONTAS DO MUNICIPIO", "POLITICA URBANA,METROPOLITANA,MEIO AMB.").foldLeft(false)((acc, blackList) => { nome.startsWith(blackList) || acc })
         }).map(MapaDeVereadores.resolve)
-        val categoria : String = classes.getOrElse(tipo + "#" + numero + "#" + data, "TBD")
+        val idProjeto = tipo + "#" + numero + "#" + data
+        val categoria : String = classes.getOrElse(idProjeto, { w.println("TBD\t" + idProjeto + "\tTBD\t" + sLine(4) + " " + sLine(5)); "TBD" })
         Projeto(categoria, tipo, numero, ano, data, sLine(4), palavras, autores)
       })
+    w.flush
+    w.close
     val writer = new PrintWriter(new File("projetos.json"))
-
     println(projetos.length)
 
     writer.print(new String(serializer.out(projetos)))
