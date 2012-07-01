@@ -16,7 +16,7 @@ object Projetos {
   val classes : Map[String, String] = Source.fromInputStream(this.getClass.getResourceAsStream("/classes")).getLines.toList.
     foldLeft(Map[String, String]())((map, line) => {
       val s = line.split("\t")
-      map += (s(1) -> s(0))
+      map += (s(1).trim -> s(0).trim)
       map
     })
 
