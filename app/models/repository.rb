@@ -11,6 +11,10 @@ class Repository
     @gastos = JSON File.read("#{Rails.root}/db/gastos.json")
   end
   
+  def vereadores
+    @vereadores
+  end
+  
   def projetos_por_vereador(vereador_id)
     @projetos.select { |p| p.autores.include? vereador_id }
   end
@@ -63,6 +67,5 @@ class Repository
     def partidos
       instance.partidos
     end
-
   end
 end

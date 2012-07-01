@@ -9,7 +9,7 @@ import java.io.File
 import scala.collection.mutable.Map
 
 @BeanInfo
-case class Projeto(categoria : String, tipo : String, numero : Int, ano : String, data : String, ementa : String, palavras : List[String], autores : List[String])
+case class Projeto(categoria : String, tipo : String, numero : Int, ano : String, data : String, ementa : String, palavras : List[String], autores : List[Int])
 
 object Projetos {
 
@@ -21,17 +21,12 @@ object Projetos {
     })
 
   def main(args : Array[String]) {
-    val vereadores : Set[String] = Source.fromInputStream(this.getClass.getResourceAsStream("/vereador-v2.txt")).getLines.toList.
-      map(line => {
-        val sLine = line.split("#")
-        if (sLine.size < 3)
-          List()
-        else
-          List(sLine(1)) ++ sLine(2).split("%") ++ sLine(3).split("%")
-      }).flatten.map(_.toLowerCase).toSet
 
+    val w = new PrintWriter(new File("projetos_nao_categorizados.tsv"))
     val projetos : List[Projeto] = Source.fromInputStream(this.getClass.getResourceAsStream("/projects_database.txt")).getLines.
-      toList.tail.filter(line => line.startsWith("PL") || line.startsWith("PDL") || line.startsWith("PLO")).
+      toList.tail.filter(line => line.startsWith("PL") || line.startsWith("PDL") || line.startsWith("PLO")).filter(line => {
+        line.split("#")(2).split("/")(2) > "2008"
+      }).
       map(line => {
         val sLine : Array[String] = parse(line)
         val tipo = sLine(0)
@@ -40,11 +35,17 @@ object Projetos {
         val temp = sLine(2).split("/")
         val ano = if (temp.size > 2) temp(2) else ""
         val palavras = if (sLine.size > 5) sLine(5).split("%").toList else List()
-        val autores : List[String] = sLine(3).split("%").toList.filter(ver => vereadores.contains(ver.toLowerCase))
-        val categoria : String = classes.getOrElse(tipo + "#" + numero + "#" + data, "TBD")
+        val autores : List[Int] = sLine(3).split("%").toList.filter(nome => {
+          !List("ADMINISTRACAO", "SAUDE", "CONSTITUICAO", "MESA", "EDUCACAO", "DEMOCRATAS", "Executivo", "PART.", "PARTIDO", "TRIBUNAL DE CONTAS DO MUNICIPIO", "POLITICA URBANA,METROPOLITANA,MEIO AMB.").foldLeft(false)((acc, blackList) => { nome.startsWith(blackList) || acc })
+        }).map(MapaDeVereadores.resolve)
+        val idProjeto = tipo + "#" + numero + "#" + data
+        val categoria : String = classes.getOrElse(idProjeto, { w.println("TBD\t" + idProjeto + "\tTBD\t" + sLine(4) + " " + sLine(5)); "TBD" })
         Projeto(categoria, tipo, numero, ano, data, sLine(4), palavras, autores)
-      }).filter(_.ano > "2008")
+      })
+    w.flush
+    w.close
     val writer = new PrintWriter(new File("projetos.json"))
+    println(projetos.length)
 
     writer.print(new String(serializer.out(projetos)))
     writer.flush

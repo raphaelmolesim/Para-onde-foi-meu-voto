@@ -9,12 +9,12 @@ import java.io.File
 import scala.collection.mutable.Map
 
 @BeanInfo
-case class Salario(gabinete : String, vereador : String, funcionario : String, cargo : String, valor : String, valorFormatado : String)
+case class Salario(gabinete : String, vereador_id : Int, funcionario : String, cargo : String, valor : String, valorFormatado : String)
 
 object Salario {
 
   def apply(gabinete : String, vereador : String, funcionario : String, cargo : String, valor : String) : Salario = {
-    Salario(gabinete.trim, vereador.trim, funcionario.trim, cargo.trim, valor.trim, "R$ " + valor.trim)
+    Salario(gabinete.trim, MapaDeVereadores.resolve(vereador.trim), funcionario.trim, cargo.trim, valor.trim, "R$ " + valor.trim)
   }
 }
 
