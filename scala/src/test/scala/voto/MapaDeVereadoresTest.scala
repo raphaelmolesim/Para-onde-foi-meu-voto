@@ -11,8 +11,43 @@ class MapaDeVereadoresTest {
   }
 
   @Test
+  def encontraUmVereadorComParenteses() {
+    MapaDeVereadores.resolve("José Ferreira (Zelão)")
+  }
+
+  @Test
+  def encontraMarcoAurelioCunha() {
+    MapaDeVereadores.resolve("Marco Aurélio Cunha")
+  }
+
+  @Test
+  def encontraMarcoAurelioCunhaBLaBLaBLa() {
+    MapaDeVereadores.resolve("marco aurelio cunha")
+  }
+
+  @Test
+  def encontraMarcoAurelioCunhaDeNovo() {
+    MapaDeVereadores.resolve("MARCO AURELIO CUNHA")
+  }
+
+  @Test
+  def encontraMarcoAurelioCunhaMaisUmaVez() {
+    MapaDeVereadores.resolve("MARCO AURELIO CUNHA ")
+  }
+
+  @Test
+  def encontraRussomano() {
+    MapaDeVereadores.resolve("Russomano")
+  }
+
+  @Test
   def naoDeveExplodirSeNomeEApelidosForemIguais() {
     Assert.assertEquals(0, MapaDeVereadores("1#Nome#Nome").resolve("Nome"))
+  }
+
+  @Test
+  def deveEncontrarNomesEmMaiusculas() {
+    MapaDeVereadores("1#Abou Anni#Nome").resolve("ABOU ANNI")
   }
 
   @Test

@@ -10,11 +10,11 @@ import dispatch.json.JsValue
 import scala.util.parsing.json.JSON
 
 @BeanInfo
-case class Gasto(vereador : String, descricao : String, valor : String, valorFormatado : String)
+case class Gasto(vereador : Int, descricao : String, valor : String, valorFormatado : String)
 
 object Gasto {
-  def apply(vereador : String, descricao : String, valor : String) : Gasto = {
-    Gasto(vereador : String, descricao.trim, valor.trim, "R$ " + valor.trim)
+  def apply(vereador : Int, descricao : String, valor : String) : Gasto = {
+    Gasto(vereador : Int, descricao.trim, valor.trim, "R$ " + valor.trim)
   }
 
 }
@@ -94,7 +94,7 @@ object Gastos {
       case m : Map[String, Map[String, String]] => m("vereador")("nome")
     }
     val value = a.get match {
-      case m : Map[String, List[Map[String, String]]] => m("despesas").map(map => Gasto(nome, map("descricao"), map("total")))
+      case m : Map[String, List[Map[String, String]]] => m("despesas").map(map => Gasto(MapaDeVereadores.resolve(nome), map("descricao"), map("total")))
     }
     value.filterNot(_.descricao == "Total")
   }

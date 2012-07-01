@@ -11,7 +11,7 @@ import scala.xml.XML
 import java.util.regex.Pattern
 
 @BeanInfo
-case class Votacao(tipoVoto : String, vereador : String, tipoProj : String, numero : String, ano : String)
+case class Votacao(tipoVoto : String, vereador_id : Int, tipoProj : String, numero : String, ano : String)
 
 object Votacoes {
 
@@ -30,7 +30,7 @@ object Votacoes {
         (votacao \ "Vereador").foreach(vereador => {
           val nome = vereador.attribute("NomeParlamentar").head.text
           val tipoVoto = vereador.attribute("Voto").head.text
-          buffer += Votacao(tipoVoto, nome, tipoProj, numero, ano)
+          buffer += Votacao(tipoVoto, MapaDeVereadores.resolve(nome), tipoProj, numero, ano)
         })
 
       })

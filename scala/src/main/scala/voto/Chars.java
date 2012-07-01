@@ -19,6 +19,8 @@ public class Chars {
 
   private static String charLimpo(final char c) {
     switch (c) {
+    case ' ':
+      return "";
     case 'à':
       return "a";
     case 'ã':
@@ -152,6 +154,8 @@ public class Chars {
     case 'Ý':
       return "Y";
     case '(':
+      return "";
+    case '-':
       return "";
     case ')':
       return "";
