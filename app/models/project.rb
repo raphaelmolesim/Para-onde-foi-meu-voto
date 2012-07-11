@@ -1,6 +1,7 @@
 class Project
   
-  attr_accessor :id, :ano, :data, :autores, :categoria, :ementa, :numero, :palavras, :tipo
+  attr_accessor :id, :ano, :data, :autores, :categoria, :ementa, :numero, :palavras, :tipo, 
+    :descricaoCategoria
   
   def initialize json
     json.each do |key, value|
