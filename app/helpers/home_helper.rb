@@ -2,7 +2,7 @@
 module HomeHelper
   
   def display_categoria categoria, total, sum
-    puts categoria
+    c = categoria.strip
     map = { 
     "fiscalizacao" => "Fiscalização",
     "dev" => "Desenvolvimento", 
@@ -23,12 +23,12 @@ module HomeHelper
     "habita" => "Habitação",
     "espaco_pub" => "Espaço Público",
     "TBD" => "A ser definido" }
-    "#{map[categoria]} (#{((total/sum.to_f) * 100).to_i}%)"
+    "#{map[c]} (#{((total/sum.to_f) * 100).to_i}%)"
   end
   
   def format_data projetos
-    map = projetos.inject({}) { |r, p| r[p['categoria']] = r[p['categoria']] ? 
-      r[p['categoria']] + 1 : 1 ; r }
+    map = projetos.inject({}) { |r, p| cat = p['categoria'].strip ; 
+      r[cat] = r[cat] ? r[cat] + 1 : 1 ; r }
     sum = map.values.inject { |r, i| r + i }
     { :children => map.collect do |categoria, total|
       {

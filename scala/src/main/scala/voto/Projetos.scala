@@ -9,14 +9,46 @@ import java.io.File
 import scala.collection.mutable.Map
 
 @BeanInfo
-case class Projeto(categoria : String, tipo : String, numero : Int, ano : String, data : String, ementa : String, palavras : List[String], autores : List[Int])
+case class Projeto(categoria : String, descricaoCategoria : String, tipo : String, numero : Int, ano : String, data : String, ementa : String, palavras : List[String], autores : List[Int])
+
+object Projeto {
+
+  def apply(categoria : String, tipo : String, numero : Int, ano : String, data : String, ementa : String, palavras : List[String], autores : List[Int]) : Projeto = {
+    Projeto(categoria, descricao(categoria), tipo, numero, ano, data, ementa, palavras, autores)
+  }
+
+  def descricao(categoria : String) = {
+    categoria match {
+      case "fiscalizacao" => "Fiscalização"
+      case "dev" => "Desenvolvimento"
+      case "transito" => "Trânsito"
+      case "seguranca" => "Segurança"
+      case "data" => "Datas Comemorativas"
+      case "aumento" => "Aumentos de Salarial"
+      case "ambiente" => "Meio Ambiente"
+      case "saude" => "Saúde"
+      case "direito" => "Garantia de Direitos"
+      case "outros" => "Outros"
+      case "muda_nome" => "Denomina Espaços Públicos"
+      case "regulamentacao" => "Regulamentação"
+      case "lixo" => "Reciclagem"
+      case "cultura" => "Cultura"
+      case "seguraca" => "Segurança"
+      case "edu" => "Educação"
+      case "habita" => "Habitação"
+      case "espaco_pub" => "Espaço Público"
+      case "TBD" => "A ser definido"
+      case outra => throw new RuntimeException("Categoria %s não possui mapeamento".format(outra))
+    }
+  }
+}
 
 object Projetos {
 
-  val classes : Map[String, String] = Source.fromInputStream(this.getClass.getResourceAsStream("/classes")).getLines.toList.
+  val classes : Map[String, String] = Source.fromInputStream(this.getClass.getResourceAsStream("/base_etiquetada-10-07-12-extrato.csv")).getLines.toList.
     foldLeft(Map[String, String]())((map, line) => {
       val s = line.split("\t")
-      map += (s(1) -> s(0))
+      map += (s(1).trim -> s(0).trim)
       map
     })
 

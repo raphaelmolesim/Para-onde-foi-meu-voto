@@ -25,6 +25,11 @@ group :production do
   gem 'pg'
 end
 
+group :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+end
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
