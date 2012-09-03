@@ -43,4 +43,7 @@ module HomeHelper
     end }  
   end
   
+  def display_name name
+    name.split(' ').map { |s| s.capitalize }.join(' ')
+  end
 end

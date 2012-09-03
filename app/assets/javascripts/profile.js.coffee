@@ -3,7 +3,5 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(document).ready ->
-    $('#select-input2').bind 'change', ->
-        alert("tes")
-
+  $("#costs-data").tabs()
 

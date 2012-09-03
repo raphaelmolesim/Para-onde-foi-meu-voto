@@ -1,19 +1,18 @@
-<header>
-	<section class="limit">
-		<h1><a href="/">Para onde foi meu voto?</a></h1>
-	</section>
-</header>
-<article id="main_visu">
-    <section class="limit">
-        <div id="visua">
-            <img src="/assets/ico_comparar.png" alt="proposta_icone" width="40" height="40">
-            <h2>Ranking de vereadores</h2>
-            <ul id="ranking">
-                <% @vereadores.each_with_index do |array, index | %>
-									<% vereador, total = array %>
-                <li><%= index + 1 %>) <%= vereador.split("-").collect{ |i| i.capitalize }.join(" ") %></li>
-								<% end %>
-            </ul>
-        </div>
-    </section>
-</article>
+<section class="content">
+  <article id="ranking">
+    <h1>Ranking de vereadores</h1>
+    <ul>
+      <% @ranking.each_with_index do |array, index | %>
+        <% vereador_slug, total = array %>
+        <% vereador = Repository.instance.vereador_por_slug vereador_slug %>
+        <li>
+          <a href="/vereador/<%= vereador["nome"].parameterize %>">
+            <img class="avatar" src="<%= vereador["foto"] %>" alt="Ir para a página do vereador <%= vereador["nome"] %>" /> 
+            <label class="name"><%= display_name vereador["nome"] %></label>
+          </a>
+          <label class="position"><%= index + 1 %>º</label>
+        </li>
+      <% end %>
+    </ul>
+  </article>
+</section>

@@ -1,7 +1,7 @@
+# -*- encoding : utf-8 -*-  
 class HomeController < ApplicationController
   def index
-    @nomes = Repository.instance.nome_vereadores
-    @partidos = Repository.instance.partidos
+    @vereadores = Repository.instance.vereadores
   end
   
   def vereador
@@ -15,14 +15,15 @@ class HomeController < ApplicationController
   def votar
     @aval = Avaliacao.new(:fator => params[:fator], :vereador => params[:id])
     @aval.save!
-    redirect_to :share
+    flash[:notice] = "Sua avaliação sobre este vereador foi armazenada com sucesso!"
+    redirect_to :ranking
   end
   
   def share
   end
   
   def ranking
-    @vereadores = Avaliacao.all.inject({}) { |r, a| r[a.vereador] = r[a.vereador] ?
+    @ranking = Avaliacao.all.inject({}) { |r, a| r[a.vereador] = r[a.vereador] ?
         r[a.vereador] + a.fator.to_i : a.fator.to_i ; r}.sort { |i1, i2| i2.last <=> i1.last }
   end
 

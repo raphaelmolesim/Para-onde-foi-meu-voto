@@ -1,96 +1,88 @@
-<header id="hdr_in">
-	<section class="limit">
-		<h1><a href="/">Para onde foi meu voto?</a></h1>
-	</section>
-</header>
-<article id="topo">
-	<section class="limit">
-		<div id="user">
-			<img src="/assets/avat.png" alt="avatar" width="70px" height="70px">
-			<h2 class="you">Voc&ecirc;</h2>
-		</div>
-		<div id="politico">
-			<img src="<%= @vereador['foto']%>" alt="avatar" width="100px" height="100px">
-			<h2>Seu Representante</h2>
-			<h3>
-				<a href="<%= @vereador['twitter'] %>">
-				<%= @vereador['nome'].split(' ').collect{ |i| i.capitalize }.join(" ") %>
-				</a>
-			</h3>
-			<h3><%= @vereador['partido'] %></h3>
-		</div>
-	</section>
-</article>
+<section class="content">
+  <article id="profile">
 
-<article id="main_visu">
-	<section class="limit">
-		<div id="visua">
-			<img src="/assets/ico_comparar.png" alt="proposta_icone" width="40" height="40">
-			<h2>Projetos que você prop&ocirc;s:</h2>
-			<%= render :partial => "map_tree", :locals => { :projetos => @projetos }  %>
-		</div>
-	</section>
-</article>
+    <div id="profile-header">
+      <div id="user">
+        <img src="/assets/avat.png" alt="avatar" width="70px" height="70px">
+        <h1 class="you">Você</h1>
+      </div>
 
+      <div id="politico" class="grid_9">
+        <img src="<%= @vereador['foto']%>" alt="avatar" width="100px" height="100px">
+        <label>Seu Representante</label>
+        <h2>
+          <a href="<%= @vereador['twitter'] %>">
+            <%= @vereador['nome'].split(' ').collect{ |i| i.capitalize }.join(" ") %>
+          </a>
+        </h2>
+        <h3><%= @vereador['partido'] %></h3>
+      </div>
+    </div>
 
-<article id="aprova" style="display:none;">
-	<section class="limit">
-		<div id="visua2">
-			<img src="/assets/ico_aprovado.png" alt="favor_icone" width="40" height="40">
-			<h2>Projetos que o vereador votou a favor:</h2>
-		</div>
-	</section>
-</article>
+    <h2 id="proposes">
+      Projetos que você proprôs:
+    </h2>
+    <%= render :partial => "map_tree", :locals => { :projetos => @projetos }  %>
+    
+    <% total_cost = number_to_currency( (@salarios + @gastos).
+      collect { |i| i['valor'].gsub(",", ".").gsub(".", "").to_i }.
+      inject(0) { |r,i| r + i }, :unit => "R$ ").gsub(",", ".").gsub(".00",",00	") %>
 
+    <h2 id="costs">
+      Quantos R$ o vereador custou aos cofres públicos:
+      <span><%= total_cost %></span>
+    </h2>
 
-<article id="reprova"  style="display:none;">
-	<section class="limit">
-		<div id="visua3">
-			<img src="/assets/ico_reprovado.png" alt="contra_icone" width="40" height="40">
-			<h2>Projetos que o vereador votou contra:</h2>
-		</div>
-	</section>
-</article>
+    <div id="costs-data">
+      <ul>
+        <li><a href="#tabs-1">Verba de Gabinete</a></li> 
+        <li><a href="#tabs-2">Gastos do Vereador</a></li> 
+      </ul>
+      
+      <div id="tabs-1">  
+        <table class="minimalist">
+          <tr>
+            <th>Cargo</th>
+            <th>Funcionário</th>
+            <th>Salário</th>
+          </tr>
+          <% @salarios.each do |salario| %>
+          <tr>
+            <td><%= salario['cargo'] %></td>
+            <td><%= salario['funcionario'] %></td>
+            <td><%= salario['valorFormatado'] %></td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
 
-<article id="gasto">
-	<section class="limit">
-		<div id="visua4">
-			<img src="/assets/ico_gastos.png" alt="gasto_icone" width="40" height="40">
-			<h2>Quantos R$ o vereador custou aos cofres p&uacute;blicos:</h2>
-			<h3><%= number_to_currency( (@salarios + @gastos).
-				collect { |i| i['valor'].gsub(",", ".").gsub(".", "").to_i }.
-				inject(0) { |r,i| r + i }, :unit => "R$ ").gsub(",", ".").gsub(".00",",00	") %></h3>
-			<div id="custos">
-				<ul id="salarios">
-					<% @salarios.each do |salario| %>
-					<li><%= salario['cargo'] %> <%= salario['funcionario'] %> <%= salario['valorFormatado'] %></li>
-					<% end %>
-				</ul>
-				<ul id="gastos">
-					<% @gastos.each do |gasto| %>
-					<li><%= gasto['cargo'] %> <%= gasto['descricao'] %> <%= gasto['valorFormatado']%></li>
-					<% end %>
-				</ul>
-			</div>
-		</div>
-	</section>
-</article>
+      <div id="tabs-2">
+        <table class="minimalist">
+          <tr>
+            <th>Descrição</th>
+            <th>Total</th>
+          </tr>
+          <% @gastos.each do |gasto| %>
+          <tr>
+            <td><%= gasto['descricao'] %></td>
+            <td><%= gasto['valorFormatado']%></td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
 
-<article id="gostou">
-	<section class="limit">
-		<div id="pergunta">
-			<div id="box_star">
-				<h2>Para voc&ecirc;, qual nota o seu candidato merece?</h2>
-				<form id="avaliacao" action="/votar/<%= params[:id] %>" method="post">
-					<input type="hidden" name="vereador" value="" />
-					<input type="hidden" name="fator" value="" />
-				</form>
-				<div id="star"></div>
+    </div>
 
-			</div>
-		</div>
-	</section>
-</article>
+		<div id="evaluation">
+      <h2>Para você, qual nota o seu candidato merece?</h2>
+      <form id="avaliacao" action="/votar/<%= params[:id] %>" method="post">
+        <input type="hidden" name="vereador" value="" />
+        <input type="hidden" name="fator" value="" />
+      </form>
+      <div id="star"></div>
+    </div>
 
-<%= render :partial => 'lightbox', :locals => {:projects => @projetos} %>
+    <%= render :partial => 'lightbox', :locals => {:projects => @projetos} %>
 
+  </article>
+</section>

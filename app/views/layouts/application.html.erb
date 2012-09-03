@@ -40,12 +40,44 @@
 	
 </head>
 <body>
-	<a href="https://github.com/raphaelmolesim/Para-onde-foi-meu-voto"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
-	<%= yield %>
-	<footer>
-		<section class="limit">
-			<p>projeto desenvolvido durante do evento Hackat&atilde;o</p>
-		</section>
-	</footer>
+
+  <header class="container_16">
+
+    <h1 class="grid_7">
+      <a title="Ir para a página inicial" href="/">Para Onde Foi Meu Voto?</a>
+    </h1>
+
+    <nav class="grid_7 round">
+      <ul>
+        <li><a href="/" title="Ir para a página inicial">Home</a></li>
+        <li><a href="/ranking" title="Ir para o ranking de vereadores">Ranking</a></li>
+        <li><a href="#" title="Venha conhecer a gente">Quem Somos</a></li>
+      </ul>
+    </nav>
+
+    <a href="https://github.com/raphaelmolesim/Para-onde-foi-meu-voto">
+      <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub">
+    </a>
+  </header>
+
+  <section class="container_16" id="main-content">
+    <%= yield %>
+  </section>
+
+  <footer class="container_16">
+  </footer>  
+
+  <% if flash[:notice] %>
+    <script type="text/javascript">
+      $().bar({
+        color : '#FF6600',
+        background_color : '#FFFFCC',
+        position : 'top',
+        removebutton : false,
+        message : '<%= flash[:notice]%>',
+        time : 4000
+      });
+    </script>
+  <% end %>
 </body>
 </html>

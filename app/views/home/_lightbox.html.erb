@@ -1,8 +1,11 @@
 <div id="lightbox-propostas" class="hidden">
-
 	<ul>
-	<%projects.each do |project| %>
-		<li><a href="http://camaramunicipalsp.qaplaweb.com.br/iah/fulltext/projeto/<%= project["tipo"]%><%= "%04d" % project["numero"] %>-<%= project["ano"] %>.pdf" data-category="<%= project["categoria"] %>" class="hidden"><%= project["tipo"] + " número " + project["numero"].to_s  + " de " + project["ano"].to_s%></a></li>
-	<%end %>
+	<% projects.each do |project| %>
+    <li>
+      <a target="blank" href="http://camaramunicipalsp.qaplaweb.com.br/iah/fulltext/projeto/<%= project["tipo"]%><%= "%04d" % project["numero"] %>-<%= project["ano"] %>.pdf" data-category="<%= project["categoria"] %>" class="hidden">
+        <%= project["tipo"] + " número " + project["numero"].to_s  + " de " + project["ano"].to_s%>
+      </a>
+    </li>
+	<% end %>
 	</ul>
 </div>
