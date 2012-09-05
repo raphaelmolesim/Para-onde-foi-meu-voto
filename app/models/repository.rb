@@ -6,7 +6,7 @@ class Repository
   def initialize
     @vereadores = JSON File.read("#{Rails.root}/db/vereadores.json")
     @projetos = JSON File.read("#{Rails.root}/db/projetos.json")
-    @projetos.collect! { |p| Project.new(p) }
+    @projetos = @projetos.map! { |p| Project.new(p) }
     @salarios = JSON File.read("#{Rails.root}/db/salarios.json")
     @gastos = JSON File.read("#{Rails.root}/db/gastos.json")
   end
@@ -14,7 +14,17 @@ class Repository
   def vereadores
     @vereadores
   end
-  
+ 
+  def vereador_por_id vereador_id
+    @vereadores.select{ |v| v['id'] == vereador_id }.first
+  end
+
+  def projetos_por_partido()
+    data = @projetos.map{ |p| p.autores.map{ |autor| (vereador_por_id(autor) || {})['partido'] }.
+      map{ |partido| { partido => p.categoria} } }.flatten
+    data.inject({}) { |r, item| k, v = item.first ;  r[k] ||= {} ; r[k][v] ||= 0 ; r[k][v] += 1 ; r}
+  end
+
   def projetos_por_vereador(vereador_id)
     @projetos.select { |p| p.autores.include? vereador_id }
   end

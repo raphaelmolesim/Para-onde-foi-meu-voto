@@ -1,0 +1,17 @@
+<section class="content">
+  <article id="general_report">
+    <h1>Relatório de Categoria por Partido</h1>
+    <ul id="id-list" style=""></ul>
+    <div id="infovis">
+
+    </div>
+  </article>
+</section>
+
+<script>
+  var data = <%= formart_bar_chart Repository.instance.projetos_por_partido %>;
+  chart_bar(data);
+</script>
+
+
+

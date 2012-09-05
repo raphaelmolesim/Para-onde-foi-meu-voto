@@ -3,7 +3,7 @@ ParaOndeFoiMeuVoto::Application.routes.draw do
   match "/votar/:id" => "home#votar", :via => :post
   match "/ranking" => "home#ranking", :via => :get
   match "/share" => "home#share", :via => :get
-
+  match "/report" => "home#report", :via => :get
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

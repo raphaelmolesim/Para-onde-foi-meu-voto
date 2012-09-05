@@ -38,11 +38,16 @@ header{
     color:$branco; 
     padding: 10px; 
     margin: 10px; 
+    width: 440px; 
+    float: left;
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px;
     @include border-radius(5px);
     @include background(linear-gradient(color-stops($azul, $azul-claro)));
     li { 
       float: left; 
-      width:130px; 
+      margin: 0 10px; 
       text-align:center; 
       font-weight: bold;
       a {
@@ -205,7 +210,45 @@ article#ranking {
   }
 }
 
+article#general_report {
+  
+  h1 { 
+    background: url('/assets/ico_comparar.png') no-repeat;
+    clear:both; 
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-family: 'Cutive', serif; 
+    font-size: 20px; 
+    padding-left: 58px;
+    padding-top: 16px;
+    padding-bottom: 20px;
+  }
+  
+  ul#id-list {
+    background-color: #EEE;
+    border: 1px solid #CCC;
+    margin: 10px 20px 50px 20px;
+    padding: 5px;
+    text-align: left;
+    text-indent: 2px;
+    height: 123px;
+    li {
+      float: left;
+      width: 212px;
+    }
+    div.query-color {
+      border: 1px solid #999;
+      float: left;
+      height: 10px;
+      margin: 3px 3px 0 0;
+      width: 10px;
+    }
+  }
+  div#infovis {
+    height: 1000px;
+  }
 
+}
 table.minimalist {
   border-collapse: collapse;
   font-size: 12px;

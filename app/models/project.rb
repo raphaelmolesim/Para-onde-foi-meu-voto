@@ -7,7 +7,7 @@ class Project
     json.each do |key, value|
       send("#{key}=".to_sym, json[key])
     end
-    @id = "#{tipo.upcase}#{'%04d' % numero}-#{ano}"
+    @id = "#{tipo.upcase}#{'%04d' % numero}-#{ano}" if tipo and numero and ano
   end
   
 end
