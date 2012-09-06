@@ -50,8 +50,13 @@ module HomeHelper
   end
 
   def formart_bar_chart hash
+    colors = ["#8ff9b7", "#d5c370", "#6b66fb", "#ef96d6", "#e5fc00", "#0bbfa7",
+      "#b5c7ab", "##c9aii9", "#d48288", "#c27c32", "#bd9f80", "#d84909", "#3b58a4",
+      "#8e801a", "#892880", "#210b7d", "#345c19", "#4c021f", "#333333"].reverse
     categories = hash.map{ |partido, cats| cats.map{ |cat, counter| cat } }.flatten.uniq
-    result = { :label => hash.map{ |partido, cats| cats.map{ |cat, counter| display_categoria(cat) } }.flatten.uniq , :values => [] }
+    result = { :label => hash.map{ |partido, cats| cats.map{ |cat, counter| display_categoria(cat) } }.flatten.uniq , 
+               :color => colors,
+               :values => [] }
     hash.each{ |partido, cats| result[:values] << {
       :label => partido, :values => categories.map{ |cat| cats[cat] || 0 }  
     } }    

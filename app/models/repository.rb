@@ -22,7 +22,15 @@ class Repository
   def projetos_por_partido()
     data = @projetos.map{ |p| p.autores.map{ |autor| (vereador_por_id(autor) || {})['partido'] }.
       map{ |partido| { partido => p.categoria} } }.flatten
-    data.inject({}) { |r, item| k, v = item.first ;  r[k] ||= {} ; r[k][v] ||= 0 ; r[k][v] += 1 ; r}
+    data.inject({}) do |r, item| 
+      k, v = item.first 
+      if k
+        r[k] ||= {} 
+        r[k][v] ||= 0 
+        r[k][v] += 1
+      end
+      r
+    end
   end
 
   def projetos_por_vereador(vereador_id)
