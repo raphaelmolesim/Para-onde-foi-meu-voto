@@ -37,3 +37,13 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+ul:after {
+  content:"";
+  display: block;
+  overflow: hidden;
+  text-indent: -999px;
+  width:0;
+  height:0;
+  clear:both;
+}

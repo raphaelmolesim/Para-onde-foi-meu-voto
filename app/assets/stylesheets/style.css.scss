@@ -7,19 +7,22 @@ $azul: #2e3192;
 $azul-claro: #5b5ecb;
 $verde: #008545;
 $amarelo: #ffe300;
+$nome-candidato: #fff;
+$bg-candidato: #2B4E72;
 
 body {
   font-family: 'Pontano-Sans', sans-serif;
   font-size: 16px;
   line-height: 1.5em;
-  background-image: url('/assets/background.jpeg');
+  background: #fff url('/assets/background.jpeg') no-repeat fixed 0 0;
+  background-size: 150% auto;
 }
 
 section.content {
   @extend .grid_15;
   background-color: $branco;
   padding: 20px;
-  @include border-radius(5px);
+  @include border-radius(4px);
   margin: 50px 0 50px 0px;  
 }
 
@@ -35,16 +38,13 @@ header{
     display:block;
   }
   nav { 
+    position:relative;
+    top:40px;
     color:$branco; 
     padding: 10px; 
-    margin: 10px; 
-    width: 440px; 
-    float: left;
-    display: inline;
-    margin-left: 10px;
-    margin-right: 10px;
-    @include border-radius(5px);
-    @include background(linear-gradient(color-stops($azul, $azul-claro)));
+    float: right;
+    @include border-radius(4px);
+    background-color: $bg-candidato;
     li { 
       float: left; 
       margin: 0 10px; 
@@ -63,7 +63,7 @@ section#question {
   h1 { 
     font-size: 80px; 
     font-family: 'Cutive', serif; 
-    letter-spacing: 5px; 
+    letter-spacing: -0.06em; 
     line-height: 100px; 
     display: block;
     text-align:center;
@@ -75,25 +75,23 @@ article#landing-page {
 
   ul {
     margin: auto;
-    width: 890px;
-    height: 1960px;
+    margin-left:-30px;
   }
 
   li {
     float: left;
     width: 128px;
     height: 175px;
-    margin: 10px;
+    margin: 0 0 30px 30px;
     text-align: center;
     label {
-      padding: 5px;
+      padding: 10px;
       display: block;
       margin-top: 5px;
-      color: $amarelo;
-      font-weight:bold;
-      line-height: 1em;
-      @include border-radius(5px);
-      @include background(linear-gradient(color-stops($azul, $azul-claro)));
+      color: $nome-candidato;
+      line-height: 1.2em;
+      @include border-radius(4px);
+      background-color: $bg-candidato;
     }
 
   }
@@ -112,7 +110,7 @@ article#profile {
   div#profile-header {
     height: 100px;
     padding: 0px 10px;
-    @include border-radius(5px);
+    @include border-radius(4px);
     background: #5C9CCC url(/assets/ui-bg_gloss-wave_55_5c9ccc_500x100.png);
     h1.you { font-size: 46px; display:inline; float:right; margin-top: 22px; }
     div#user{ float:left; width: 200px; margin-top: 15px; }
