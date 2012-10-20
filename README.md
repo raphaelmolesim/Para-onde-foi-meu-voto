@@ -7,7 +7,7 @@ Instruções
 
 ##Aplicativo Web
 
-#####Pré-requisitos:
+#######Pré-requisitos:
 	
 * Ruby Virtual Machine (RVM)
 	Instalar o Ruby na sua máquina, por favor utilize o manual   
