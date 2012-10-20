@@ -10,7 +10,7 @@ Instruções
 #####Pré-requisitos:
 	
 * Ruby Virtual Machine (RVM)
-	Instalar o Ruby na sua máquina, por favor utilize o manual 
+	Instalar o Ruby na sua máquina, por favor utilize o manual  
 	[Tutorial de Instalação do RVM e do Ruby](https://github.com/danielvlopes/ruby-unix/tree/master/pt "Tutorial de Instalação do RVM e do Ruby")
 
 ##### Instalação
@@ -22,4 +22,4 @@ Instruções
 	rake db:migrate
 	rails server
 
-Pronto é só abrir o seu navegador em http://localhost:3000/
+Pronto é só abrir o seu navegador em [http://localhost:3000/](http://localhost:3000/ "http://localhost:3000/")
