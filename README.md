@@ -5,12 +5,12 @@ Para Onde Foi Meu Voto?
 Instruções
 ----------
 
-##Aplicativo Web
+###Aplicativo Web
 
-#######Pré-requisitos:
+#####Pré-requisitos:
 	
 * Ruby Virtual Machine (RVM)
-	Instalar o Ruby na sua máquina, por favor utilize o manual   
+	Instalar o Ruby na sua máquina, por favor utilize o manual 
 	[Tutorial de Instalação do RVM e do Ruby](https://github.com/danielvlopes/ruby-unix/tree/master/pt "Tutorial de Instalação do RVM e do Ruby")
 
 ##### Instalação
