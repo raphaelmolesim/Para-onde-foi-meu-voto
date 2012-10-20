@@ -14,14 +14,11 @@ Ruby Virtual Machine (RVM)
 
 ### Instalação
 
+<code>
 rvm install 1.9.2-p290
-
 git clone git@github.com:raphaelmolesim/Para-onde-foi-meu-voto
-
 cd Para-onde-foi-meu-voto
-
-bundle install 
-
+bundle install
 rake db:migrate
-
 rails server
+<code>
